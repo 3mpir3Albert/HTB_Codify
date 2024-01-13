@@ -6,4 +6,5 @@ First of all, before starting to explain how has been pwned Codify, I'm going to
   - An exaustive system enumeration is needed to detect an ``.db'' file.
   - Cracking hashes.
   - Abusing SUDOERS privilege.
+
 As usual, reconnaissance phase was the first phase executed due to the fact that a hacker need to know the maximum information of his objetive before starting exploit posible vulnerabilities.

@@ -7,4 +7,4 @@ First of all, before starting to explain how has been pwned Codify, I'm going to
   - Cracking hashes.
   - Abusing SUDOERS privilege.
 
-As usual, reconnaissance phase was the first phase executed due to the fact that a hacker need to know the maximum information of his objetive before starting exploit posible vulnerabilities.
+As usual, reconnaissance phase was the first phase executed due to the fact that a hacker needs to know as much information about his target as possible before starting to exploit posible vulnerabilities.

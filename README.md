@@ -62,7 +62,7 @@ In short, these functions use Reflect.getPrototypeOf() to get the prototype of t
 
 In addiction, as the exceptions have the ability to access the main process, so they can return an object that is not possible in the sandbox thread, and the data input is not sanitized, the attacker can run his own commands on the server.
 
-A reverse shell was created to access the server, as shown in the following image:
+Thanks to all concepts explained, reverse shell was created to access the server, as shown in the following image:
 
 [![explotacion.png](https://i.postimg.cc/x8XTZHJH/explotacion.png)](https://postimg.cc/wRdpy1kT)
 

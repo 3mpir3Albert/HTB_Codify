@@ -7,6 +7,8 @@ First of all, before starting to explain how has been pwned Codify, I'm going to
   - Cracking hashes.
   - Abusing SUDOERS privilege.
 
+### Reconnaissance phase
+
 As usual, reconnaissance phase was the first phase executed due to the fact that a hacker needs to know as much information about his target as possible before starting to exploit posible vulnerabilities.
 
 To do this, it is necessary to add a new line in the file ''/etc/hosts'', where the server IP is defined when a request is made to codify.htb:
@@ -30,6 +32,8 @@ Searching for information about the website, at "http://codify.htb/about" one di
 VM2 is a JavaScript library used to virtualize a sandbox on a server. In this case, this sandbox is used to run insecure code given by a user in a safe way. For this purpose, VM2 disables some global objects such as process, which allows to obtain information and control the main process.
 
 In addition, developers restricted other modules such as 'child_process' and 'fs'. The child_process module allows to generate threads and thus execute commands on the server, and the fs module allows to interact directly with the file system.
+
+### Exploitation phase
 
 These restrictions can be avoided, as shown in **CVE-2023-29199**. The following code is used for this purpose:
 
@@ -57,3 +61,9 @@ Why are restrictions avoided with this code? Because VM2 uses the transformer() 
 In short, these functions use Reflect.getPrototypeOf() to get the prototype of the error object. Thus, the Proxy object can be used to throw unsanitized exceptions containing malicious code.
 
 In addiction, as the exceptions have the ability to access the main process, so they can return an object that is not possible in the sandbox thread, and the data input is not sanitized, the attacker can run his own commands on the server.
+
+A reverse shell was created to access the server, as shown in the following image:
+
+[![explotacion.png](https://i.postimg.cc/x8XTZHJH/explotacion.png)](https://postimg.cc/wRdpy1kT)
+
+### Post exploitation phase

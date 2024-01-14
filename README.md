@@ -18,3 +18,7 @@ Next, Nmap is used to scan all ports on the server. The tool output is as follow
 [![Nmap.png](https://i.postimg.cc/4ySGNV78/Nmap.png)](https://postimg.cc/XBdmsZgF)
 
 As seen in the last image, three open ports were discovered, two HTTP ports and one SSH port. The SSH port had a fairly up-to-date version, so it would be difficult to exploit this service. On the other hand, there are two http ports, so it is worth scanning the technology that is working behind both ports:
+
+[![Scann.png](https://i.postimg.cc/qqLN1mdv/Scann.png)](https://postimg.cc/4HY4dQdD)
+
+Practically, the output of both ports is the same, so it is likely that the same website is being exposed on both ports. For this reason, the two websites are accessed and verified to be the same website.

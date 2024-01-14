@@ -27,4 +27,6 @@ Searching for information about the website, at "http://codify.htb/about" one di
 
 [![VM2.png](https://i.postimg.cc/cHNCKZ0P/VM2.png)](https://postimg.cc/SXDk5BXG)
 
-VM2 is a JavaScript library used to virtualize a sandbox on a server. In this case, this sandbox is used to run insecure code given by a user in a safe way.
+VM2 is a JavaScript library used to virtualize a sandbox on a server. In this case, this sandbox is used to run insecure code given by a user in a safe way. For this purpose, VM2 disables some global objects such as process, which allows to obtain information and control the main process.
+
+In addition, developers disabled other modules such as 'child_process' and 'fs'. The child_process module allows to generate threads and thus execute commands on the server, and the fs module allows to interact directly with the file system.

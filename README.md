@@ -13,3 +13,6 @@ To do this, it is necessary to add a new line in the file ''/etc/hosts'', where 
 
 [![hosts.png](https://i.postimg.cc/KvyMrT1X/hosts.png)](https://postimg.cc/7bmhqf1X)
 
+Next, Nmap is used to scan all ports on the server. The tool output is as follows:
+
+[![Nmap.png](https://i.postimg.cc/4ySGNV78/Nmap.png)](https://postimg.cc/XBdmsZgF)

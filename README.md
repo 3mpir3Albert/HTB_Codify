@@ -31,7 +31,7 @@ VM2 is a JavaScript library used to virtualize a sandbox on a server. In this ca
 
 In addition, developers restricted other modules such as 'child_process' and 'fs'. The child_process module allows to generate threads and thus execute commands on the server, and the fs module allows to interact directly with the file system.
 
-These restrictions can be avoided, as shown in *CVE-2023-29199*. The following code is used for this purpose:
+These restrictions can be avoided, as shown in **CVE-2023-29199**. The following code is used for this purpose:
 
 ```JavaScript
 err = {};

@@ -11,5 +11,5 @@ As usual, reconnaissance phase was the first phase executed due to the fact that
 
 To do this, it is necessary to add a new line in the file ''/etc/hosts'', where the server IP is defined when a request is made to codify.htb:
 
-[![hosts.png](https://i.postimg.cc/KvyMrT1X/hosts.png)](https://postimg.cc/7bmhqf1X)
+<center>[![hosts.png](https://i.postimg.cc/KvyMrT1X/hosts.png)](https://postimg.cc/7bmhqf1X)</center>
 

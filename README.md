@@ -53,3 +53,7 @@ try {
 ```
 
 Why are restrictions avoided with this code? Because VM2 uses the transformer() module to preprocess and modify its source code, for example, they modify the way exceptions are raised to raise sanitized exceptions with handleException().
+
+In short, these functions use Reflect.getPrototypeOf() to get the prototype of the error object. Thus, the Proxy object can be used to throw unsanitized exceptions containing malicious code.
+
+In addiction, as the exceptions have the ability to access the main process, so they can return an object that is not possible in the sandbox thread, and the data input is not sanitized, the attacker can run his own commands on the server.

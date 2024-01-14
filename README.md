@@ -16,3 +16,5 @@ To do this, it is necessary to add a new line in the file ''/etc/hosts'', where 
 Next, Nmap is used to scan all ports on the server. The tool output is as follows:
 
 [![Nmap.png](https://i.postimg.cc/4ySGNV78/Nmap.png)](https://postimg.cc/XBdmsZgF)
+
+As seen in the last image, three open ports were discovered, two HTTP ports and one SSH port. The SSH port had a fairly up-to-date version, so it would be difficult to exploit this service. On the other hand, there are two http ports, so it is worth scanning the technology that is working behind both ports:

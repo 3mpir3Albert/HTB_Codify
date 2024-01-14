@@ -26,3 +26,5 @@ Practically, the output of both ports is the same, so it is likely that the same
 Searching for information about the website, at "http://codify.htb/about" one discovers that it makes use of the NodeJs VM2 library. More specifically, it uses VM2 version 3.9.16:
 
 [![VM2.png](https://i.postimg.cc/cHNCKZ0P/VM2.png)](https://postimg.cc/SXDk5BXG)
+
+VM2 is a JavaScript library used to virtualize a sandbox on a server. In this case, this sandbox is used to run insecure code given by a user in a safe way.

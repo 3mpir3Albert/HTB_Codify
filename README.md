@@ -72,3 +72,5 @@ After gaining access to the CVS user, it is time to recognize the system. If don
 [![fichero.png](https://i.postimg.cc/tJTxDYNn/fichero.png)](https://postimg.cc/5Yhy29Gf)
 
 Now, with the password cracked, it is possible to migrate to Joshua's account.
+
+### Privilege escalation to root

@@ -106,3 +106,5 @@ done
 /usr/bin/chmod 774 -R "$BACKUP_DIR"
 /usr/bin/echo 'Done!'
 ```
+
+How can the file be abused?

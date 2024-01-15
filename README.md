@@ -74,3 +74,4 @@ After gaining access to the CVS user, it is time to recognize the system. If don
 Now, with the password cracked, it is possible to migrate to Joshua's account.
 
 ### Privilege escalation to root
+Being Joshua, a reconnaissance of the system was done looking for something that would allow a privilege escalation to root. With a bit of luck, a file was found that can be run as root in "/opt/scripts".

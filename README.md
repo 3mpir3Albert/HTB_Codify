@@ -1,13 +1,11 @@
-# HTB_Codify
-In this repository you can find the Codify server write up and the exploit used to make the privilege escalation.
-## Write up
+# Write up
 First of all, before starting to explain how has been pwned Codify, I'm going to show you all the concepts that are used to vulnerate this server:
   - An NodeJs vulnerability is exploited to gain access as user CVS (user with minimum privileges)
   - An exaustive system enumeration is needed to detect an ''.db'' file.
   - Cracking hashes.
   - Abusing SUDOERS privilege.
 
-### Reconnaissance phase
+## Reconnaissance phase
 
 As usual, reconnaissance phase was the first phase executed due to the fact that a hacker needs to know as much information about his target as possible before starting to exploit posible vulnerabilities.
 
@@ -33,7 +31,7 @@ VM2 is a JavaScript library used to virtualize a sandbox on a server. In this ca
 
 In addition, developers restricted other modules such as 'child_process' and 'fs'. The child_process module allows to generate threads and thus execute commands on the server, and the fs module allows to interact directly with the file system.
 
-### Exploitation phase
+## Exploitation phase
 
 These restrictions can be avoided, as shown in **CVE-2023-29199**. The following code is used for this purpose:
 
@@ -66,4 +64,4 @@ Thanks to all concepts explained, reverse shell was created to access the server
 
 [![explotacion.png](https://i.postimg.cc/x8XTZHJH/explotacion.png)](https://postimg.cc/wRdpy1kT)
 
-### Post exploitation phase
+## Post exploitation phase

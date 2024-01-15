@@ -65,3 +65,4 @@ Thanks to all concepts explained, reverse shell was created to access the server
 [![explotacion.png](https://i.postimg.cc/x8XTZHJH/explotacion.png)](https://postimg.cc/wRdpy1kT)
 
 ## Post exploitation phase
+### Privilege escalation to Joshua
